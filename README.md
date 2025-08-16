@@ -1,10 +1,13 @@
 def analyze_text(text):
     """
-    Analyzes a given text to return word count, character count, and average word length.
+    Analyzes a given text to return word count, character count, line count, and average word length.
     """
     if not isinstance(text, str):
         return "Error: Input must be a string."
 
+    lines = text.split('\n')
+    line_count = len(lines)
+    
     words = text.split()
     word_count = len(words)
     char_count = len(text)
@@ -17,11 +20,14 @@ def analyze_text(text):
     return {
         "word_count": word_count,
         "character_count": char_count,
+        "line_count": line_count,
         "average_word_length": round(avg_word_length, 2)
     }
 
 if __name__ == "__main__":
-    sample_text = "This is a simple text to analyze."
+    sample_text = """This is a simple text.
+It has multiple lines to analyze.
+Let's see the results!"""
     analysis_results = analyze_text(sample_text)
     print("--- Text Analysis Results ---")
     for key, value in analysis_results.items():
