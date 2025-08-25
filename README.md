@@ -5,16 +5,6 @@ def analyze_text(text):
     if not isinstance(text, str):
         return "Error: Input must be a string."
 
-    lines = text.split('\n')
-    line_count = len(lines)
-    
-    words = text.split()
-    word_count = len(words)
-    char_count = len(text)
-    
-    if word_count == 0:
-        avg_word_length = 0
-    else:
         avg_word_length = sum(len(word) for word in words) / word_count
         
     return {
