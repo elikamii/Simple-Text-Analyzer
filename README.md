@@ -3,7 +3,7 @@ def analyze_text(text):
     Analyzes a given text to return word count, character count, line count, and average word length.
     """
     if not isinstance(text, str):
-        return "Error: Inp
+        return
 
         avg_word_length = sum(len(word) for word in words) / word_count
         
